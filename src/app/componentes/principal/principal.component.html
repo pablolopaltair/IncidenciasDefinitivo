@@ -1,0 +1,27 @@
+
+<div class="container pt-4 pb-4 ">
+
+    <h1>Bienvenido al panel de incidencias </h1>
+
+    <div *ngIf="!userIsAuthenticated" class="nav nav-pills flex-column mt-auto">
+        <hr>
+        <p>Parce que no has iniciado sesión todavía, inicia sesión o registrate para acceder a 
+            las funciones de la aplicación.
+        </p>
+
+        <button routerLink="/login" type="button" class="btn btn-primary">Inicio de sesión y registro</button>
+      </div>
+
+
+      <div *ngIf="userIsAuthenticated" class="nav nav-pills flex-column mt-auto">
+        <hr>
+        <h3>Estás logeado como: {{ userEmail }}</h3>
+        <br>
+        <p>Usa las opciones del menú de navegación izquierdo para gestionar las incidencias</p>
+        <button type="button" (click)="onClick()" class="btn btn-outline-danger mt-5">Cerrar sesión</button>
+      </div>
+
+    
+    
+</div>
+

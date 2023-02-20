@@ -1,0 +1,23 @@
+<div class="container">
+    <h2 style="text-align: center;">Inicio de sesión</h2>
+        <br>
+    <div class="formLogin card" style="background-color: rgb(238, 244, 253);">
+        
+        <form [formGroup]="formLogin" (ngSubmit)="onSubmit()">
+            <div *ngIf="error" class="alert alert-danger">Los datos introducidos no coinciden con la base de datos.</div>
+
+            <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="text" class="form-control" formControlName="email">
+            </div><br>
+            <div class="mb-3">
+                <label class="form-label">Password</label>
+                <input type="password" class="form-control" formControlName="password">
+            </div><br>
+            <input class="btn btn-primary" type="submit" value="Iniciar sesión">
+        </form>
+        <br>
+        <a routerLink="/register" class="">¿No tienes cuenta? Regístrate aquí</a><br>
+    </div>
+    
+</div>

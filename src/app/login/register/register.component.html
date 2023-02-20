@@ -1,0 +1,28 @@
+<div class="container">
+    <h2 style="text-align: center;">Registro</h2>
+        <br>
+    <div class="formLogin card" style="background-color: rgb(238, 244, 253);">
+        
+        <form [formGroup]="formReg" (ngSubmit)="onSubmit()">
+            <div *ngIf="error" class="alert alert-danger">Error al registrar: "{{error}}".</div>
+            <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="text" class="form-control" formControlName="email">
+            </div><br>
+
+            <div class="mb-3">
+                <label class="form-label">Contraseña</label>
+                <input type="password" class="form-control" formControlName="password">
+            </div><br>
+
+            <div class="mb-3">
+                <label class="form-label">Repite la contraseña</label>
+                <input type="password" class="form-control" formControlName="confirmPassword">
+            </div><br>
+            <div *ngIf="formReg.errors?.['notSame']" class="alert alert-danger">Las contraseñas no coinciden.</div>
+            <input class="btn btn-primary" type="submit" value="Registrarme">
+        </form>
+        <br>
+    </div><br>
+    <button routerLink="/login" class="btn btn-outline-primary"  value="Volver">← Volver</button>
+</div>

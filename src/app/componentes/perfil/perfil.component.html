@@ -1,0 +1,11 @@
+<h2>Estos son los datos de tu perfil:</h2><br>
+
+<a class="etiqueta">Identificador: </a><a>{{ userId }}</a><br>
+<a class="etiqueta">Email: </a><a>{{ userEmail }}</a><br>
+<a class="etiqueta">Rango: </a>
+<a *ngIf="isAdmin">Administrador</a>
+<a *ngIf="isDirectivo">Directivo</a>
+<a *ngIf="isMantenimiento">Mantenimiento</a>
+<a *ngIf="isUsuario">Usuario</a>
+<br>
+<button type="button" (click)="onClick()" class="btn btn-outline-danger mt-5">Cerrar sesión</button>

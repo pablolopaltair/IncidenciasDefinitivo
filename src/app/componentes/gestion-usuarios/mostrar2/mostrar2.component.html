@@ -1,0 +1,37 @@
+
+<div class="container contenedor">
+    <h1>Listado de incidencias</h1>
+    <br>
+    
+      
+   
+      
+    
+      <div class="card tarjeta">
+        <div class="card-body">
+          <table>
+            <tr>
+              <th class="descripcionTd" scope="col">Identificador</th>
+              <th class="estadoTd" scope="col">Email</th>
+              <th class="fechaTd" scope="col">Rango</th>
+              <th scope="col">Acción</th>
+            </tr> <br>
+  
+          <tr *ngFor="let usuario of Usuarios">
+            <td class="descripcionTd">{{usuario.id}}</td>
+            <td class="descripcionTd">{{usuario.email}}</td>
+            <td class="estadoTd">{{usuario.rango}}</td>
+            <td>
+              <button routerLink="/usersEdit/{{usuario.id}}" class="btn btn-outline-secondary">Editar Usuario</button>
+            </td>
+          </tr>
+        </table>
+        </div>
+      </div>
+      
+   
+     
+    
+    
+  
+  </div>

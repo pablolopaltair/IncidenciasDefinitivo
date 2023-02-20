@@ -1,0 +1,41 @@
+
+<div class="container">
+  <h1>Listado de incidencias</h1>
+  <br>
+  
+    
+ 
+    
+  
+    <div class="card">
+      <div class="card-body">
+        <table>
+          <tr>
+            <th class="descripcionTd" scope="col">Descripción</th>
+            <th class="estadoTd" scope="col">Estado</th>
+            <th class="fechaTd" scope="col">Fecha</th>
+            <th class="lugarTd" scope="col">Lugar</th>
+            <th class="posibleArregloTd" scope="col">Posible arreglo</th>
+            <th scope="col">Actualizar estado</th>
+          </tr> <br>
+
+        <tr *ngFor="let incidencia of Incidencias">
+          <td class="descripcionTd">{{incidencia.descripcion}}</td>
+          <td class="estadoTd">{{incidencia.estado}}</td>
+          <td class="fechaTd">{{incidencia.fecha}}</td>
+          <td class="lugarTd">{{incidencia.lugar}}</td>
+          <td class="posibleArregloTd">{{incidencia.posible_arreglo}}</td>
+          <td>
+            <button routerLink="/edit/{{incidencia.id}}" class="btn btn-outline-secondary">Actualizar estado</button>
+          </td>
+        </tr>
+      </table>
+      </div>
+    </div>
+    
+ 
+   
+  
+  
+
+</div>

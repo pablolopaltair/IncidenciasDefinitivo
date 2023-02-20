@@ -1,0 +1,48 @@
+<div class="contenedorCrear pt-4 pb-4">
+    
+    <h1>Creación de nueva incidencia</h1>
+    <hr>
+
+    <form [formGroup]="incidenciaForm" (ngSubmit)="onSubmit()" novalidate>
+        
+        <div class="mb-3">
+            <label class="form-label">Fecha de la incidencia</label>
+            <input formControlName="fecha" type="date" class="form-control" required="">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Descripción</label>
+            <textarea name="mitextarea" id="mitextarea" cols="40" rows="5" style="resize: none;"
+             formControlName="descripcion" class="form-control"  placeholder="Descripción de la incidencia..."  type="text">
+            </textarea>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Lugar</label>
+            <input formControlName="lugar" type="text" class="form-control" required="">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Posible Arreglo</label>
+            <input formControlName="posible_arreglo" type="text" class="form-control" required="">
+        </div>
+
+        <!--<div class="mb-3">
+            <label class="form-label">Estado</label>
+            
+            <select formControlName="estado" class="form-select"  placeholder="Estado"  type="text">
+                <option selected>Selecciona una opción...</option>
+                <option value="Leido">Leido</option>
+                <option value="Asignado">Asignado</option>
+                <option value="Comenzado">Comenzado</option>
+                <option value="Terminado">Terminado</option>
+              </select>
+        </div>-->
+
+
+        <button [disabled]="!incidenciaForm.valid" type="submit" class="btn btn-primary">Crear</button>
+
+
+
+    </form>
+</div>

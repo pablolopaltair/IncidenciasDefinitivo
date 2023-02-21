@@ -24,7 +24,7 @@ const routes: Routes = [
 
   {path: '',component:PrincipalComponent},
   {path: 'show',component:MostrarComponent, canActivate: [AutentificadoGuard, MantenimientoGuard]},
-  {path: 'create',component:CrearComponent,  canActivate: [AutentificadoGuard]},
+  {path: 'create',component:CrearComponent},
   {path: 'edit/:id',component:EditarComponent,  canActivate: [AutentificadoGuard, MantenimientoGuard]},
   {path: 'check', component:RevisionComponent,  canActivate: [AutentificadoGuard, DirectivoGuard]},
   {path: 'checkEdit/:id', component:RevisionEditarComponent,  canActivate: [AutentificadoGuard, DirectivoGuard]},

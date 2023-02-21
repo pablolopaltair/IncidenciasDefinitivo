@@ -7,7 +7,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 //Importación del servicio
-import { IncidenciaService } from '../../servicios/incidencia.service';
+import { IncidenciaService } from '../../services/incidencia.service';
 
 
 @Component({

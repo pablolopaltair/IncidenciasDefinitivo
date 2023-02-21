@@ -2,7 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 
 //Importación del Servicio
-import { IncidenciaService } from 'src/app/servicios/incidencia.service';
+import { IncidenciaService } from 'src/app/services/incidencia.service';
 
 //Importación del Modelo
 import { Incidencia } from '../../modelos/incidencia.model';

@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 //Importación del servicio de incidencia
-import { IncidenciaService } from '../../servicios/incidencia.service';
+import { IncidenciaService } from 'src/app/services/incidencia.service';
 
 //Importación de construcción de Formularios 
 import { FormBuilder, FormGroup } from '@angular/forms';

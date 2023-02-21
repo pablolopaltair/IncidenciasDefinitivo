@@ -4,8 +4,8 @@ import { Component, OnInit } from '@angular/core';
 
 
 //Importación del Servicio
-import { IncidenciaService } from 'src/app/servicios/incidencia.service';
-import { UsuarioService } from 'src/app/servicios/usuario.service';
+import { IncidenciaService } from 'src/app/services/incidencia.service';
+import { UsuarioService } from 'src/app/services/usuario.service';
 
 //Importación del Modelo
 import { Incidencia } from 'src/app/modelos/incidencia.model';

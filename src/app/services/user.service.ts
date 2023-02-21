@@ -9,24 +9,24 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 import { map } from 'rxjs/operators';
 
+import { UsuarioService } from './usuario.service';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
+  userIdForm: string;
 
   
 
-  constructor(private auth: Auth, private afsAuth: AngularFireAuth, private afs: AngularFirestore) { }
+  constructor(
+    private auth: Auth, 
+    private afsAuth: AngularFireAuth, 
+    private afs: AngularFirestore,
+    private sesionService: UsuarioService) { }
 
 
-
-
-/*
-register({ email, password }: any) {
-    return createUserWithEmailAndPassword(this.auth, email, password);
-  }
-*/
 
   register({ email, password }: any) {
       return new Promise((resolve, reject) => {
@@ -39,13 +39,16 @@ register({ email, password }: any) {
   }
 
   
-  
-
   login({ email, password }: any) {
-    return signInWithEmailAndPassword(this.auth, email, password);
+    return signInWithEmailAndPassword(this.auth, email, password)
+      .then(usuario => {
+        this.sesionService.setUsuario(usuario);
+        return usuario;
+      })
+      .catch(error => {
+        throw new Error('No se pudo autenticar al usuario');
+      });
   }
-
-
 
   logout() {
     return signOut(this.auth);
@@ -65,6 +68,7 @@ register({ email, password }: any) {
     }
     return userRef.set(data, { merge: true })
   }
+
   isUserRole(userUid) {
     return this.afs.doc<UserInterface>(`users/${userUid}`).valueChanges();
   }
@@ -79,9 +83,17 @@ register({ email, password }: any) {
     return this.afs.collection('users',
         ref => ref.where('email', "==", mail)
           .limit(1)).valueChanges();
-
-
-}
+  }
   
+  getUid(){
+    this.afsAuth.authState.subscribe((user) => { 
+        this.userIdForm = user.uid;
+      
+
+      
+    });
+    return this.userIdForm;
+  }
+
 
 }

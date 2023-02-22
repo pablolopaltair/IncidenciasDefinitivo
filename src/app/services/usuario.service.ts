@@ -22,11 +22,9 @@ export class UsuarioService {
 
    }
 
-   ngOnInit(){
-    
-   }
 
-  //CREACIÓN DE LOS MÉTODOS PARA EL CRUD DE PORTEROS
+
+
 
 
   //Getter de los porteors

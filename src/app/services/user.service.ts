@@ -86,14 +86,7 @@ export class UserService {
   }
   
   getUid(){
-    this.afsAuth.authState.subscribe((user) => { 
-        this.userIdForm = user.uid;
-      
+    return this.afsAuth.currentUser.then(user => user.email);
 
-      
-    });
-    return this.userIdForm;
   }
-
-
 }
